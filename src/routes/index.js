@@ -1,8 +1,5 @@
 const router = require('express').Router();
 
-const helloRoute = require('./hello');
-
-router.use('/hello', helloRoute);
 
 const pokeRoute = require('./pokemon');
 

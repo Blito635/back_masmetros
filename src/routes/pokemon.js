@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const fetch = require("node-fetch")
-const apiPoke = "https://pokeapi.co/api/v2/pokemon/1"
+const apiPoke = "https://pokeapi.co/api/v2/pokemon"
 
 router.route('/').get((req,res)=>{
-    fetch(`${apiPoke}limit=20&offset=${req.query.offset}`)
+    //limit=20&offset=${req.query.offset}
+    fetch(`${apiPoke}?limit=20&offset=${req.query.offset}`)
     .then(promesaFetch=> promesaFetch.json())
     .then(contenido => {msg = contenido;
         res.json(msg);
